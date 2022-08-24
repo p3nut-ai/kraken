@@ -18,7 +18,7 @@ def crack_sha1():
 
         # compare password from list to the sha1 input
 
-        if convert_to_sha1.strip() == get_sha1_hash:
+        if convert_to_sha1 == get_sha1_hash:
             print(Fore.GREEN + "[*] Password found: " + str(password))
             quit()
         else:
@@ -28,7 +28,7 @@ def crack_sha1():
 def convert_to_sha1():
     get_password_to_be_hashed = input('[*] Enter password here: ')
 
-    hash_type = hashlib.sha256()
+    hash_type = hashlib.sha1()
     hash_type.update(get_password_to_be_hashed.encode()) # convert string to hash
     #
     print(Fore.GREEN + "Here's your sha1 hash password: " + hash_type.hexdigest()) #output hash
@@ -40,7 +40,6 @@ def convert_Sha256():
     hash_type.update(get_password_to_be_hashed.encode()) # convert string to hash
     #
     print(Fore.GREEN + "Here's your Sha256 hash password: " + hash_type.hexdigest())
-
 def crack_Sha256():
 
     get_sha256_hash = input('[*] Enter sha256 hash: ')
@@ -55,7 +54,7 @@ def crack_Sha256():
 
         # compare password from list to the sha1 input
 
-        if get_sha256_hash.strip() == convert_to_sha256:
+        if get_sha256_hash == convert_to_sha256:
             print(Fore.GREEN + "[*] Password found: " + str(password))
             quit()
         else:
@@ -77,7 +76,7 @@ def crack_md5():
         enc_password = password.encode('utf-8')
         password_md5 = hashlib.md5(enc_password).hexdigest()
 
-        if password_md5.strip() == get_md5_hash:
+        if password_md5 == get_md5_hash:
             print(Fore.GREEN + "[+] Password Found: " + password)
             quit()
     # if password is no in list
@@ -90,8 +89,6 @@ def convert_to_md5():
     #
     print(Fore.GREEN + "Here's your sha1 hash password: " + hash_type.hexdigest()) #output hash
 
-
-
 def convert_sha512():
     get_password_to_be_hashed = input('[*] Enter password here: ')
 
@@ -99,7 +96,6 @@ def convert_sha512():
     hash_type.update(get_password_to_be_hashed.encode()) # convert string to hash
     #
     print(Fore.GREEN + "Here's your Sha512 hash password: " + hash_type.hexdigest())
-
 def crack_sha512():
     get_sha512_hash = input('[*] Enter sha512 hash: ')
     # get online password list
@@ -113,18 +109,18 @@ def crack_sha512():
 
         # compare password from list to the sha1 input
 
-        if get_sha512_hash.strip() == convert_to_sha512:
+        if get_sha512_hash == convert_to_sha512:
             print(Fore.GREEN + "[*] Password found: " + str(password))
             quit()
         else:
             print(Fore.RED + '[*] Password not match skip to the next one [*]')
-            if password is not in password list
+
     print(Fore.YELLOW + 'Password is not in the list')
 
 
 
 # ask if user want to convert pass to hash or crack hash
-print(Fore.RED + '''
+print(Fore.WHITE + '''
                     ------------------------------------
                      ..............
                    ::::::::::::::::::
@@ -138,7 +134,7 @@ print(Fore.RED + '''
                  ::::::::|::::::::  !
                  :;;;;;;;;;;;;;;;;']}      Password Hashing/Cracking
                  ;--.--.--.--.--.-
-                  \/ \/ \/ \/ \/ \/               By: p3nut
+                  \/ \/ \/ \/ \/ \/               By: Jonathan J.
                      :::       ::::
                       :::      ::
                      :\:      ::
