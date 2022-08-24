@@ -1,7 +1,6 @@
 import hashlib
 from urllib.request import urlopen
 from colorama import Fore
-import time
 
 
 def crack_sha1():
